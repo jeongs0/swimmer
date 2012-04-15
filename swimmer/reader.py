@@ -20,10 +20,10 @@ def getpost(postdir):
             with open(filename, 'r', 'utf-8') as f:
                 content=md.convert(f.read())
                 for i in xrange(2):
-                    if data[i] in md.Meta:
-                        empdata[i]=md.Meta[data[i]]
-                        else:
-                            empdata[i]=""
+			if data[i] in md.Meta:
+                      		empdata[i]=md.Meta[data[i]]
+			else:
+                        	empdata[i]=""
             post=POST(empdata[0], content, empdata[1], empdata[2])
             posts.append(post)
     return posts
